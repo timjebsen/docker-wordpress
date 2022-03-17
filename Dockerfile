@@ -4,9 +4,10 @@ ARG SMTP_SERVER
 ARG AUTH_USER
 ARG AUTH_PASS
 
-RUN apt-get update
-RUN apt-get install -y ssmtp
-RUN apt-get clean
+RUN apt-get update \
+	apt-get install -y ssmtp \
+	apt-get clean
+
 RUN SMTP_SERVER=$SMTP_SERVER \
 	AUTH_USER=$AUTH_USER \
 	AUTH_PASS=$AUTH_PASS \
